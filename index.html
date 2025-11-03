@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suncity Studio - Professional Video, Photography & Printing</title>
+    <meta name="description" content="Professional video coverage, photography, printing, and framing services in Homabay. Weddings, funerals, music videos, and corporate events.">
+    <!-- Favicon for Suncity Studio -->
+<link rel="icon" type="image/png" href="https://vasundhararealty.com/wp-content/uploads/2023/09/Happy-International-Literacy-Day-3.png">
+<link rel="apple-touch-icon" href="https://vasundhararealty.com/wp-content/uploads/2023/09/Happy-International-Literacy-Day-3.png">
+<!-- Web App Manifest -->
+<link rel="manifest" href="manifest.json">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Suncity Studio">
+<meta name="theme-color" content="#ffb300">
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lucide-static@0.16.29/font/lucide.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="nav-content">
+                <!-- Logo -->
+                <div class="nav-logo" onclick="scrollToSection('home')">
+                    <div class="logo-icon">
+                        <i data-lucide="camera"></i>
+                    </div>
+                    <span class="logo-text">Suncity Studio</span>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="nav-links">
+                    <button onclick="scrollToSection('home')" class="nav-link">Home</button>
+                    <button onclick="scrollToSection('about')" class="nav-link">About Us</button>
+                    <button onclick="scrollToSection('services')" class="nav-link">Services</button>
+                    <button onclick="scrollToSection('gallery')" class="nav-link">Gallery</button>
+                    <button onclick="scrollToSection('pricing')" class="nav-link">Pricing</button>
+                    <button onclick="scrollToSection('contact')" class="nav-link">Contact</button>
+                    <button onclick="scrollToSection('contact')" class="btn btn-primary">Book Now</button>
+                </div>
+
+                <!-- Install button (visible) -->
+                <button id="install-btn" class="btn btn-primary" aria-label="Install Suncity Studio">Install App</button>
+
+                <!-- Mobile Menu Button -->
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                    <i data-lucide="menu" id="menu-icon"></i>
+                    <i data-lucide="x" id="close-icon" style="display: none;"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="mobile-menu">
+                <button onclick="scrollToSection('home')" class="mobile-link">Home</button>
+                <button onclick="scrollToSection('about')" class="mobile-link">About Us</button>
+                <button onclick="scrollToSection('services')" class="mobile-link">Services</button>
+                <button onclick="scrollToSection('gallery')" class="mobile-link">Gallery</button>
+                <button onclick="scrollToSection('pricing')" class="mobile-link">Pricing</button>
+                <button onclick="scrollToSection('contact')" class="mobile-link">Contact</button>
+                <div class="mobile-menu-btn-container">
+                    <button onclick="scrollToSection('contact')" class="btn btn-primary btn-full">Book Now</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <!-- Slideshow Background -->
+        <div class="slideshow-container">
+            <div class="slide active">
+                <img src="https://images.unsplash.com/photo-1701721028113-e7be33b63f66?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3ZWRkaW5nJTIwdmlkZW9ncmFwaHklMjBjb3VwbGV8ZW58MXx8fHwxNzYyMTU5MTcyfDA&ixlib=rb-4.1.0&q=80&w=1080" alt="Weddings">
+                <div class="slide-overlay"></div>
+            </div>
+            <div class="slide">
+                <img src="https://images.unsplash.com/photo-1644666695083-a18a435dfd71?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmdW5lcmFsJTIwY2VyZW1vbnklMjBmbG93ZXJzfGVufDF8fHx8MTc2MjE1OTE3Mnww&ixlib=rb-4.1.0&q=80&w=1080" alt="Funeral Coverage">
+                <div class="slide-overlay"></div>
+            </div>
+            <div class="slide">
+                <img src="https://images.unsplash.com/photo-1674124504779-62197c204390?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtdXNpYyUyMHZpZGVvJTIwcHJvZHVjdGlvbnxlbnwxfHx8fDE3NjIxNTkxNzJ8MA&ixlib=rb-4.1.0&q=80&w=1080" alt="Music Videos">
+                <div class="slide-overlay"></div>
+            </div>
+            <div class="slide">
+                <img src="https://images.unsplash.com/photo-1705544363562-cdf94dd458cd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb3Jwb3JhdGUlMjBldmVudCUyMHBob3RvZ3JhcGh5fGVufDF8fHx8MTc2MjE1OTE3NHww&ixlib=rb-4.1.0&q=80&w=1080" alt="Corporate Events">
+                <div class="slide-overlay"></div>
+            </div>
+        </div>
+
+        <!-- Slide Navigation -->
+        <button class="slide-nav prev" onclick="changeSlide(-1)">
+            <i data-lucide="chevron-left"></i>
+        </button>
+        <button class="slide-nav next" onclick="changeSlide(1)">
+            <i data-lucide="chevron-right"></i>
+        </button>
+
+        <!-- Hero Content -->
+        <div class="hero-content">
+            <div class="container">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        Capture Every Moment with <span class="text-gradient">Suncity Studio</span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        Professional Video, Photography & Printing for All Occasions
+                    </p>
+                    <p class="hero-tagline">
+                        We bring life to your memories — in motion and print.
+                    </p>
+
+                    <!-- CTA Buttons -->
+                    <div class="hero-buttons">
+                        <button onclick="scrollToSection('contact')" class="btn btn-primary btn-lg">Book Now</button>
+                        <button onclick="scrollToSection('services')" class="btn btn-outline btn-lg">View Our Packages</button>
+                    </div>
+
+                    <!-- Quick Features -->
+                    <div class="quick-features">
+                        <div class="feature-card">
+                            <i data-lucide="video"></i>
+                            <p>Video Coverage</p>
+                        </div>
+                        <div class="feature-card">
+                            <i data-lucide="camera"></i>
+                            <p>Photography</p>
+                        </div>
+                        <div class="feature-card">
+                            <i data-lucide="printer"></i>
+                            <p>Printing</p>
+                        </div>
+                        <div class="feature-card">
+                            <i data-lucide="frame"></i>
+                            <p>Framing</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide Indicators -->
+        <div class="slide-indicators">
+            <button class="indicator active" onclick="goToSlide(0)"></button>
+            <button class="indicator" onclick="goToSlide(1)"></button>
+            <button class="indicator" onclick="goToSlide(2)"></button>
+            <button class="indicator" onclick="goToSlide(3)"></button>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-grid">
+                <!-- Image Side -->
+                <div class="about-image">
+                    <div class="image-glow"></div>
+                    <img src="https://images.unsplash.com/photo-1643264623879-bb85ea39c62a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBwaG90b2dyYXBoZXIlMjBjYW1lcmF8ZW58MXx8fHwxNzYyMDY3MDA1fDA&ixlib=rb-4.1.0&q=80&w=1080" alt="Professional Photography">
+                </div>
+
+                <!-- Content Side -->
+                <div class="about-content">
+                    <h2 class="section-title">
+                        About <span class="text-gradient">Suncity Studio</span>
+                    </h2>
+                    <p class="about-text">
+                        Suncity Studio is a full-service visual production company specializing in high-quality video coverage, photography, printing, and framing.
+                    </p>
+                    <p class="about-text">
+                        We cover all events — weddings, funerals, music shoots, corporate events, and traditional ceremonies (nyombo) — delivering timeless memories with creativity and precision.
+                    </p>
+
+                    <!-- Mission -->
+                    <div class="mission-card">
+                        <h3 class="mission-title">
+                            <i data-lucide="heart"></i>
+                            Our Mission
+                        </h3>
+                        <p class="mission-text">
+                            To capture, preserve, and present every special moment with clarity, color, and care.
+                        </p>
+                    </div>
+
+                    <!-- Stats -->
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i data-lucide="award"></i>
+                            </div>
+                            <p class="stat-number">500+</p>
+                            <p class="stat-label">Events Covered</p>
+                        </div>
+                            <a href="tel:+254715068672">0715 068 672</a>
+                            <a href="tel:+254708623801">0708 623 801</a>
+                            <a href="tel:+254719169728">0719 169 728</a>
+                            <a href="tel:0111683903">0111 683 903</a>
+                            <p class="stat-number">1000+</p>
+                            <p class="stat-label">Happy Clients</p>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i data-lucide="star"></i>
+                            </div>
+                            <p class="stat-number">5+</p>
+                            <p class="stat-label">Years Experience</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    Our <span class="text-gradient">Services</span>
+                </h2>
+                <p class="section-subtitle">Professional solutions for every visual need</p>
+            </div>
+
+            <!-- Video Coverage -->
+            <div class="service-category">
+                <div class="category-header">
+                    <div class="category-icon">
+                        <i data-lucide="video"></i>
+                    </div>
+                    <h3>Video Coverage Packages</h3>
+                </div>
+                <div class="service-grid">
+                    <!-- Normal Video -->
+                    <div class="service-card">
+                        <div class="service-icon gradient-amber">
+                            <i data-lucide="video"></i>
+                        </div>
+                        <h4 class="service-name">Normal Video</h4>
+                        <p class="service-price">KES 20,000 - 45,000</p>
+                        <ul class="service-features">
+                            <li><span class="check">✓</span> 1 Cameraman</li>
+                            <li><span class="check">✓</span> 1 Day coverage</li>
+                            <li><span class="check">✓</span> Canon Camera (200mm lens)</li>
+                            <li><span class="check">✓</span> No drone</li>
+                            <li><span class="check">✓</span> No album</li>
+                            <li><span class="check">✓</span> No flashdisk</li>
+                        </ul>
+                    </div>
+
+                    <!-- Quality Video -->
+                    <div class="service-card popular">
+                        <div class="popular-badge">Most Popular</div>
+                        <div class="service-icon gradient-orange">
+                            <i data-lucide="monitor"></i>
+                        </div>
+                        <h4 class="service-name">Quality Video</h4>
+                        <p class="service-price">KES 50,000 - 65,000</p>
+                        <ul class="service-features">
+                            <li><span class="check">✓</span> 2 Cameramen</li>
+                            <li><span class="check">✓</span> 2 Days coverage</li>
+                            <li><span class="check">✓</span> 2 Cameras</li>
+                            <li><span class="check">✓</span> Live Streaming Available</li>
+                            <li><span class="check">✓</span> 1 Flashdisk</li>
+                            <li><span class="check">✓</span> 1 Picture Album</li>
+                            <li><span class="check">✓</span> No Drone</li>
+                        </ul>
+                    </div>
+
+                    <!-- Exclusive Coverage -->
+                    <div class="service-card">
+                        <div class="service-icon gradient-purple">
+                            <i data-lucide="wifi"></i>
+                        </div>
+                        <h4 class="service-name">Exclusive Coverage</h4>
+                        <p class="service-price">From KES 80,000+</p>
+                        <ul class="service-features">
+                            <li><span class="check">✓</span> Full Crew (multiple cameramen)</li>
+                            <li><span class="check">✓</span> 4 Cameras</li>
+                            <li><span class="check">✓</span> 4K Drone Coverage</li>
+                            <li><span class="check">✓</span> 2 Flashdisks</li>
+                            <li><span class="check">✓</span> Premium Picture Album</li>
+                            <li><span class="check">✓</span> Live Streaming (4K)</li>
+                            <li><span class="check">✓</span> Coverage: 3+ Days</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Photography -->
+            <div class="service-category">
+                <div class="category-header">
+                    <div class="category-icon">
+                        <i data-lucide="camera"></i>
+                    </div>
+                    <h3>Photography Packages</h3>
+                </div>
+                <div class="photo-grid">
+                    <div class="photo-card">
+                        <h4>Normal Photo</h4>
+                        <p class="photo-price">KES 200</p>
+                        <p class="photo-desc">1 Edited Picture</p>
+                    </div>
+                    <div class="photo-card">
+                        <h4>Standard Photo</h4>
+                        <p class="photo-price">KES 500</p>
+                        <p class="photo-desc">4K Close-Up Edited Photo</p>
+                    </div>
+                    <div class="photo-card">
+                        <h4>Exclusive Photo</h4>
+                        <p class="photo-price">KES 800</p>
+                        <p class="photo-desc">Premium Edited with Wrappers (negotiable)</p>
+                    </div>
+                    <div class="photo-card">
+                        <h4>Unlimited Hourly Shoot</h4>
+                        <p class="photo-price">KES 1,000/hr</p>
+                        <p class="photo-desc">Per Hour Session</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Printing & Mounting -->
+            <div class="service-category">
+                <div class="category-header">
+                    <div class="category-icon">
+                        <i data-lucide="printer"></i>
+                    </div>
+                    <h3>Printing & Mounting</h3>
+                </div>
+                <div class="printing-grid">
+                    <div class="printing-card">
+                        <h4>Banners Printing</h4>
+                        <p class="printing-desc">Custom sizes, full color. Prices vary with size and material.</p>
+                    </div>
+                    <div class="printing-card">
+                        <h4>Funeral Programmes</h4>
+                        <p class="printing-desc">Designed, printed & delivered in full color. Custom layouts available.</p>
+                    </div>
+                    <div class="printing-card">
+                        <h4>Roll-Up Banners</h4>
+                        <p class="printing-price">KES 4,000 - 6,000</p>
+                        <p class="printing-desc">Standard size (33x79 inches)</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Frames & Picture Mounts -->
+            <div class="service-category">
+                <div class="category-header">
+                    <div class="category-icon">
+                        <i data-lucide="frame"></i>
+                    </div>
+                    <h3>Frames & Picture Mounts</h3>
+                </div>
+                <div class="frames-grid">
+                    <div class="frame-card">
+                        <h4>Ordinary Frame Small</h4>
+                        <p class="frame-size">5x7 inch</p>
+                        <p class="frame-price">KES 1,200</p>
+                    </div>
+                    <div class="frame-card">
+                        <h4>Classic Frame Medium</h4>
+                        <p class="frame-size">8x10 inch</p>
+                        <p class="frame-price">KES 2,000</p>
+                    </div>
+                    <div class="frame-card">
+                        <h4>Polished Frame Large</h4>
+                        <p class="frame-size">12x16 inch</p>
+                        <p class="frame-price">KES 3,000</p>
+                    </div>
+                    <div class="frame-card">
+                        <h4>Designer Frame</h4>
+                        <p class="frame-size">16x20 inch</p>
+                        <p class="frame-price">KES 3,500</p>
+                    </div>
+                    <div class="frame-card">
+                        <h4>Premium Glass Frame</h4>
+                        <p class="frame-size">18x24 inch</p>
+                        <p class="frame-price">KES 4,000</p>
+                    </div>
+                    <div class="frame-card">
+                        <h4>Luxury Mount</h4>
+                        <p class="frame-size">20x30 inch</p>
+                        <p class="frame-price">KES 5,000</p>
+                    </div>
+                    <div class="frame-card">
+                        <h4>Wedding Frame</h4>
+                        <p class="frame-size">Custom Decorative</p>
+                        <p class="frame-price">KES 3,800</p>
+                    </div>
+                    <div class="frame-card">
+                        <h4>Collage Frame</h4>
+                        <p class="frame-size">4-in-1 layout</p>
+                        <p class="frame-price">KES 2,500</p>
+                    </div>
+                    <div class="frame-card">
+                        <h4>Canvas Mount</h4>
+                        <p class="frame-size">Printed Texture Finish</p>
+                        <p class="frame-price">KES 4,500</p>
+                    </div>
+                    <div class="frame-card">
+                        <h4>Wooden Artistic Frame</h4>
+                        <p class="frame-size">Handcrafted</p>
+                        <p class="frame-price">KES 5,000</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    Our <span class="text-gradient">Gallery</span>
+                </h2>
+                <p class="section-subtitle">Showcasing our finest work</p>
+            </div>
+
+            <!-- Filter Tabs -->
+            <div class="gallery-filters">
+                <button class="filter-btn active" onclick="filterGallery('All')">All</button>
+                <button class="filter-btn" onclick="filterGallery('Weddings')">Weddings</button>
+                <button class="filter-btn" onclick="filterGallery('Music Videos')">Music Videos</button>
+                <button class="filter-btn" onclick="filterGallery('Funeral Coverage')">Funeral Coverage</button>
+                <button class="filter-btn" onclick="filterGallery('Studio Photoshoots')">Studio Photoshoots</button>
+                <button class="filter-btn" onclick="filterGallery('Banners & Prints')">Banners & Prints</button>
+            </div>
+
+            <!-- Gallery Grid -->
+            <div class="gallery-grid" id="gallery-grid">
+                <div class="gallery-item" data-category="Weddings" onclick="openLightbox(0)">
+                    <img src="https://images.unsplash.com/photo-1701721028113-e7be33b63f66?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3ZWRkaW5nJTIwdmlkZW9ncmFwaHklMjBjb3VwbGV8ZW58MXx8fHwxNzYyMTU5MTcyfDA&ixlib=rb-4.1.0&q=80&w=1080" alt="Wedding Ceremony">
+                    <div class="gallery-overlay">
+                        <h4>Wedding Ceremony</h4>
+                        <p>Weddings</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="Music Videos" onclick="openLightbox(1)">
+                    <img src="https://images.unsplash.com/photo-1674124504779-62197c204390?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtdXNpYyUyMHZpZGVvJTIwcHJvZHVjdGlvbnxlbnwxfHx8fDE3NjIxNTkxNzJ8MA&ixlib=rb-4.1.0&q=80&w=1080" alt="Music Video Production">
+                    <div class="gallery-overlay">
+                        <h4>Music Video Production</h4>
+                        <p>Music Videos</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="Funeral Coverage" onclick="openLightbox(2)">
+                    <img src="https://images.unsplash.com/photo-1644666695083-a18a435dfd71?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmdW5lcmFsJTIwY2VyZW1vbnklMjBmbG93ZXJzfGVufDF8fHx8MTc2MjE1OTE3Mnww&ixlib=rb-4.1.0&q=80&w=1080" alt="Funeral Coverage">
+                    <div class="gallery-overlay">
+                        <h4>Funeral Coverage</h4>
+                        <p>Funeral Coverage</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="Studio Photoshoots" onclick="openLightbox(3)">
+                    <img src="https://images.unsplash.com/photo-1625850864233-90c8dc3a35ac?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzdHVkaW8lMjBwaG90b2dyYXBoeSUyMHBvcnRyYWl0fGVufDF8fHx8MTc2MjE1OTE3NHww&ixlib=rb-4.1.0&q=80&w=1080" alt="Studio Portrait">
+                    <div class="gallery-overlay">
+                        <h4>Studio Portrait</h4>
+                        <p>Studio Photoshoots</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="Studio Photoshoots" onclick="openLightbox(4)">
+                    <img src="https://images.unsplash.com/photo-1705544363562-cdf94dd458cd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb3Jwb3JhdGUlMjBldmVudCUyMHBob3RvZ3JhcGh5fGVufDF8fHx8MTc2MjE1OTE3NHww&ixlib=rb-4.1.0&q=80&w=1080" alt="Corporate Event">
+                    <div class="gallery-overlay">
+                        <h4>Corporate Event</h4>
+                        <p>Studio Photoshoots</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="Banners & Prints" onclick="openLightbox(5)">
+                    <img src="https://images.unsplash.com/photo-1693031630177-b897fb9d7154?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcmludGluZyUyMHByZXNzJTIwYmFubmVyfGVufDF8fHx8MTc2MjE1OTE3M3ww&ixlib=rb-4.1.0&q=80&w=1080" alt="Custom Banners">
+                    <div class="gallery-overlay">
+                        <h4>Custom Banners</h4>
+                        <p>Banners & Prints</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="Banners & Prints" onclick="openLightbox(6)">
+                    <img src="https://images.unsplash.com/photo-1676835981079-7810565db333?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwaWN0dXJlJTIwZnJhbWUlMjBnYWxsZXJ5JTIwd2FsbHxlbnwxfHx8fDE3NjIxNTkxNzN8MA&ixlib=rb-4.1.0&q=80&w=1080" alt="Framed Memories">
+                    <div class="gallery-overlay">
+                        <h4>Framed Memories</h4>
+                        <p>Banners & Prints</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="Music Videos" onclick="openLightbox(7)">
+                    <img src="https://images.unsplash.com/photo-1643264623879-bb85ea39c62a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBwaG90b2dyYXBoZXIlMjBjYW1lcmF8ZW58MXx8fHwxNzYyMDY3MDA1fDA&ixlib=rb-4.1.0&q=80&w=1080" alt="Behind the Scenes">
+                    <div class="gallery-overlay">
+                        <h4>Behind the Scenes</h4>
+                        <p>Music Videos</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox">
+        <button class="lightbox-close" onclick="closeLightbox()">
+            <i data-lucide="x"></i>
+        </button>
+        <div class="lightbox-content">
+            <img id="lightbox-img" src="" alt="">
+            <div class="lightbox-info">
+                <h3 id="lightbox-title"></h3>
+                <p id="lightbox-category"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    Our <span class="text-gradient">Pricing</span>
+                </h2>
+                <p class="section-subtitle">Transparent pricing for exceptional service</p>
+            </div>
+
+            <!-- Video Pricing Cards -->
+            <div class="pricing-grid">
+                <!-- Normal Video -->
+                <div class="pricing-card">
+                    <div class="pricing-icon gradient-blue">
+                        🎥
+                    </div>
+                    <h4 class="pricing-name">Normal Video</h4>
+                    <p class="pricing-desc">Perfect for small gatherings</p>
+                    <p class="pricing-price">KES 20,000 - 45,000</p>
+                    <ul class="pricing-features">
+                        <li><i data-lucide="check"></i> 1 Cameraman</li>
+                        <li><i data-lucide="check"></i> 1 Day coverage</li>
+                        <li><i data-lucide="check"></i> Canon Camera (200mm lens)</li>
+                        <li><i data-lucide="check"></i> HD Quality</li>
+                        <li><i data-lucide="check"></i> Basic Editing</li>
+                        <li><i data-lucide="check"></i> Digital Delivery</li>
+                    </ul>
+                    <button onclick="scrollToSection('contact')" class="btn btn-dark btn-full">Book Now</button>
+                </div>
+
+                <!-- Quality Video -->
+                <div class="pricing-card featured">
+                    <div class="featured-badge">
+                        <i data-lucide="star"></i>
+                        <span>Most Popular</span>
+                        <i data-lucide="star"></i>
+                    </div>
+                    <div class="pricing-icon gradient-amber">
+                        🎥
+                    </div>
+                    <h4 class="pricing-name">Quality Video</h4>
+                    <p class="pricing-desc">Most Popular Choice</p>
+                    <p class="pricing-price">KES 50,000 - 65,000</p>
+                    <ul class="pricing-features">
+                        <li><i data-lucide="check"></i> 2 Cameramen</li>
+                        <li><i data-lucide="check"></i> 2 Days coverage</li>
+                        <li><i data-lucide="check"></i> 2 Professional Cameras</li>
+                        <li><i data-lucide="check"></i> Live Streaming</li>
+                        <li><i data-lucide="check"></i> 1 Flashdisk Included</li>
+                        <li><i data-lucide="check"></i> 1 Picture Album</li>
+                        <li><i data-lucide="check"></i> Full HD Quality</li>
+                        <li><i data-lucide="check"></i> Advanced Editing</li>
+                    </ul>
+                    <button onclick="scrollToSection('contact')" class="btn btn-primary btn-full">Book Now</button>
+                </div>
+
+                <!-- Exclusive Coverage -->
+                <div class="pricing-card">
+                    <div class="pricing-icon gradient-purple">
+                        🎥
+                    </div>
+                    <h4 class="pricing-name">Exclusive Coverage</h4>
+                    <p class="pricing-desc">Premium Experience</p>
+                    <p class="pricing-price">From KES 80,000+</p>
+                    <ul class="pricing-features">
+                        <li><i data-lucide="check"></i> Full Professional Crew</li>
+                        <li><i data-lucide="check"></i> 4 Cameras</li>
+                        <li><i data-lucide="check"></i> 4K Drone Coverage</li>
+                        <li><i data-lucide="check"></i> 2 Flashdisks</li>
+                        <li><i data-lucide="check"></i> Premium Picture Album</li>
+                        <li><i data-lucide="check"></i> 4K Live Streaming</li>
+                        <li><i data-lucide="check"></i> 3+ Days Coverage</li>
+                        <li><i data-lucide="check"></i> Cinematic Editing</li>
+                        <li><i data-lucide="check"></i> Same-day Highlights</li>
+                    </ul>
+                    <button onclick="scrollToSection('contact')" class="btn btn-dark btn-full">Book Now</button>
+                </div>
+            </div>
+
+            <!-- Quick Reference Grid -->
+            <div class="pricing-reference">
+                <h3 class="reference-title">Additional Services Pricing</h3>
+                <div class="reference-grid">
+                    <div class="reference-card">
+                        <h4>Photography</h4>
+                        <ul>
+                            <li><span>Normal Photo</span> <span class="ref-price">KES 200</span></li>
+                            <li><span>Standard Photo</span> <span class="ref-price">KES 500</span></li>
+                            <li><span>Exclusive Photo</span> <span class="ref-price">KES 800</span></li>
+                            <li><span>Hourly Shoot</span> <span class="ref-price">KES 1,000/hr</span></li>
+                        </ul>
+                    </div>
+                    <div class="reference-card">
+                        <h4>Printing</h4>
+                        <ul>
+                            <li><span>Banners</span> <span class="ref-price">Custom</span></li>
+                            <li><span>Roll-Up Banners</span> <span class="ref-price">KES 4-6K</span></li>
+                            <li><span>Programmes</span> <span class="ref-price">Custom</span></li>
+                        </ul>
+                    </div>
+                    <div class="reference-card">
+                        <h4>Small Frames</h4>
+                        <ul>
+                            <li><span>5x7 inch</span> <span class="ref-price">KES 1,200</span></li>
+                            <li><span>8x10 inch</span> <span class="ref-price">KES 2,000</span></li>
+                            <li><span>Collage (4-in-1)</span> <span class="ref-price">KES 2,500</span></li>
+                        </ul>
+                    </div>
+                    <div class="reference-card">
+                        <h4>Large Frames</h4>
+                        <ul>
+                            <li><span>12x16 inch</span> <span class="ref-price">KES 3,000</span></li>
+                            <li><span>Canvas Mount</span> <span class="ref-price">KES 4,500</span></li>
+                            <li><span>Luxury Mount</span> <span class="ref-price">KES 5,000</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    Get in <span class="text-gradient">Touch</span>
+                </h2>
+                <p class="section-subtitle">Let's make your event unforgettable</p>
+            </div>
+
+            <div class="contact-grid">
+                <!-- Contact Information -->
+                <div class="contact-info">
+                    <div class="info-card">
+                        <div class="info-header">
+                            <div class="info-icon">
+                                <i data-lucide="map-pin"></i>
+                            </div>
+                            <h4>Location</h4>
+                        </div>
+                        <p>Garage Road, Homabay<br>
+                        Next to KCB Bank<br>
+                        Opposite Homabay Market<br>
+                        Besides the Main Highway</p>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-header">
+                            <div class="info-icon">
+                                <i data-lucide="phone"></i>
+                            </div>
+                            <h4>Phone</h4>
+                        </div>
+                        <a href="tel:+254715068672">0715 068 672</a>
+                        <a href="tel:+254708623801">0708 623 801</a>
+                        <a href="tel:+254719169728">0719 169 728</a>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-header">
+                            <div class="info-icon">
+                                <i data-lucide="mail"></i>
+                            </div>
+                            <h4>Email</h4>
+                        </div>
+                        <a href="mailto:robertkiche10@gmail.com">robertkiche10@gmail.com</a>
+                    </div>
+
+                    <div class="info-card whatsapp-card">
+                        <div class="info-header">
+                            <div class="info-icon whatsapp-icon">
+                                <i data-lucide="message-circle"></i>
+                            </div>
+                            <h4>WhatsApp Direct</h4>
+                        </div>
+                        <p class="whatsapp-desc">Chat with us instantly</p>
+                        <a href="https://wa.me/254715068672" target="_blank" class="btn btn-whatsapp btn-full">
+                            <i data-lucide="message-circle"></i> Chat on WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Booking Form -->
+                <div class="booking-form-container">
+                    <div class="form-card">
+                        <h3>Book Your Service</h3>
+                        <p class="form-subtitle">Fill out the form and we'll contact you via WhatsApp</p>
+                        <form id="booking-form" onsubmit="handleSubmit(event)">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="name">
+                                        <i data-lucide="user"></i> Your Name *
+                                    </label>
+                                    <input type="text" id="name" name="name" required placeholder="Enter your full name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone">
+                                        <i data-lucide="phone"></i> Phone Number *
+                                    </label>
+                                    <input type="tel" id="phone" name="phone" required placeholder="07XX XXX XXX">
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="eventType">
+                                        <i data-lucide="briefcase"></i> Event Type *
+                                    </label>
+                                    <select id="eventType" name="eventType" required>
+                                        <option value="">Select event type</option>
+                                        <option value="wedding">Wedding</option>
+                                        <option value="funeral">Funeral</option>
+                                        <option value="music">Music Video</option>
+                                        <option value="nyombo">Nyombo Ceremony</option>
+                                        <option value="corporate">Corporate Event</option>
+                                        <option value="photoshoot">Photoshoot</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="date">
+                                        <i data-lucide="calendar"></i> Event Date *
+                                    </label>
+                                    <input type="date" id="date" name="date" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="service">
+                                    <i data-lucide="briefcase"></i> Service Interested In *
+                                </label>
+                                <select id="service" name="service" required>
+                                    <option value="">Select a service</option>
+                                    <option value="normal-video">Normal Video (KES 20K-45K)</option>
+                                    <option value="quality-video">Quality Video (KES 50K-65K)</option>
+                                    <option value="exclusive-video">Exclusive Coverage (KES 80K+)</option>
+                                    <option value="photography">Photography</option>
+                                    <option value="printing">Printing & Banners</option>
+                                    <option value="framing">Frames & Mounting</option>
+                                    <option value="combo">Combo Package</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message">
+                                    <i data-lucide="message-circle"></i> Additional Details
+                                </label>
+                                <textarea id="message" name="message" rows="4" placeholder="Tell us more about your event and any special requirements..."></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-whatsapp btn-full btn-lg">
+                                <i data-lucide="message-circle"></i> Send via WhatsApp
+                            </button>
+
+                            <p class="form-note">* Your message will be sent directly to our WhatsApp for instant response</p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <div class="container">
+                <p>&copy; 2025 Suncity Studio. All rights reserved.</p>
+                <p class="footer-tagline">Professional Video, Photography & Printing Services in Homabay</p>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="script.js"></script>
+</body>
+</html>
